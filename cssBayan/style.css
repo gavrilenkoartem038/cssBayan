@@ -1,3 +1,11 @@
+* {
+  scroll-behavior: smooth;
+}
+
+body {
+  box-sizing: border-box;
+}
+
 ul {
   list-style-type: none;
   margin: 0;
@@ -7,34 +15,65 @@ ul {
 .container {
   width: 600px;
   margin: 0 auto;
-  color: blue;
-}
-
-.container input {
-  display: none;
+  font: bold 1.3em 'Arial', sans-serif;
+  color: rgb(19, 169, 255);
+  transition: all 0.5s;
 }
 
 .container:hover {
   color: inherit;
 }
 
-.accordeon__item {
-  border: 1px solid black;
-  overflow: hidden;
+.accordeon {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-input:checked+label {
+.container input {
+  display: none;
+}
+
+.accordeon__item {
+  border: 3px solid rgba(162, 162, 162, 0.3);
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.accordeon__item:has(input:checked) {
+  background-color: rgba(162, 162, 162, 0.3);
+}
+
+.accordeon__item:active {
+  background-color: white !important;
+}
+
+.accordeon__item:active .accordeon__label {
+  color: rgb(19, 169, 255);
+}
+
+.accordeon__label  {
+  display: block;
+  padding: 1rem;
+  transition: all 0.5s;
+}
+
+input:checked + .accordeon__label {
   color: black;
 }
 
 .accordeon__image {
+  display: flex;
+  justify-content: center;
   max-height: 0;
-  transition: all 1s ease-in-out;
+  transition: all 0.3s ease;
 }
 
-input:checked~.accordeon__image {
+input:checked ~ .accordeon__image {
   max-height: 100vh;
   padding: 1rem 0;
-  transition: all 1s ease;
+  transition: all 0.3s ease;
   box-sizing: border-box;
 }
+
