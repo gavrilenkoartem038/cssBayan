@@ -17,7 +17,16 @@ ul {
   margin: 0 auto;
   font: bold 1.3em 'Arial', sans-serif;
   color: rgb(19, 169, 255);
+}
+
+.accordeon__icon {
+  filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%);
   transition: all 0.5s;
+}
+
+.container:hover .accordeon__icon,
+input:checked ~ .accordeon__label .accordeon__icon {
+  filter: none;
 }
 
 .container:hover {
@@ -38,7 +47,7 @@ ul {
   border: 3px solid rgba(162, 162, 162, 0.3);
   border-radius: 1rem;
   overflow: hidden;
-  transition: all 0.5s;
+  transition: background-color 0.3s;
 }
 
 .accordeon__item:has(input:checked) {
@@ -53,14 +62,27 @@ ul {
   color: rgb(19, 169, 255);
 }
 
+.accordeon__item:active .accordeon__icon {
+  filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%) !important;
+}
+
 .accordeon__label  {
-  display: block;
+  display: flex;
+  justify-content: space-between;
   padding: 1rem;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
 
 input:checked + .accordeon__label {
   color: black;
+}
+
+
+.accordeon__icon {
+  background-image: url(assets/icons/plus.svg);
+  background-size: contain;
+  width: 1em;
+  height: 1em;
 }
 
 .accordeon__image {
@@ -75,5 +97,9 @@ input:checked ~ .accordeon__image {
   padding: 1rem 0;
   transition: all 0.3s ease;
   box-sizing: border-box;
+}
+
+input:checked ~ .accordeon__label .accordeon__icon {
+  transform: rotate(135deg);
 }
 
