@@ -1,0 +1,29 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 600px;
+  margin:  0 auto;
+  color: blue;
+}
+
+.container input {
+  display: none;
+}
+.container:hover {
+  color: inherit;
+}
+input:checked + label {
+  color: black;
+}
+
+.accordeon__image {
+  display: none;
+}
+
+input:checked + label + .accordeon__image {
+  display: block;
+}
