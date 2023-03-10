@@ -6,24 +6,35 @@ ul {
 
 .container {
   width: 600px;
-  margin:  0 auto;
+  margin: 0 auto;
   color: blue;
 }
 
 .container input {
   display: none;
 }
+
 .container:hover {
   color: inherit;
 }
-input:checked + label {
+
+.accordeon__item {
+  border: 1px solid black;
+  overflow: hidden;
+}
+
+input:checked+label {
   color: black;
 }
 
 .accordeon__image {
-  display: none;
+  max-height: 0;
+  transition: all 1s ease-in-out;
 }
 
-input:checked + label + .accordeon__image {
-  display: block;
+input:checked~.accordeon__image {
+  max-height: 100vh;
+  padding: 1rem 0;
+  transition: all 1s ease;
+  box-sizing: border-box;
 }
