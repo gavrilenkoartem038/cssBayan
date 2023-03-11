@@ -4,6 +4,7 @@
 
 body {
   box-sizing: border-box;
+  margin: 0;
 }
 
 ul {
@@ -12,10 +13,15 @@ ul {
   padding: 0;
 }
 
-.container {
-  width: 600px;
+.wrapper {
+  max-width: 1920px;
   margin: 0 auto;
-  font: bold 1.3em 'Arial', sans-serif;
+  padding: 1rem;
+}
+
+.container {
+  margin: 0 auto;
+  font: bold 1em 'Arial', sans-serif;
   color: rgb(19, 169, 255);
 }
 
@@ -92,6 +98,11 @@ input:checked + .accordeon__label {
   transition: all 0.3s ease;
 }
 
+.accordeon__image img {
+  max-width: 90%;
+  height: auto;
+}
+
 input:checked ~ .accordeon__image {
   max-height: 100vh;
   padding: 1rem 0;
@@ -104,6 +115,17 @@ input:checked ~ .accordeon__label .accordeon__icon {
 }
 
 @media screen and (min-width: 820px) {
+  .container {
+    font-size: 1.2em;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .container {
+    width: 80%;
+    font-size: 1.4em;
+  }
+
   .accordeon__item:hover .accordeon__image {
     max-height: 100vh;
     padding: 1rem 0;
