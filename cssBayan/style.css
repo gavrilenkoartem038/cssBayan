@@ -103,3 +103,15 @@ input:checked ~ .accordeon__label .accordeon__icon {
   transform: rotate(135deg);
 }
 
+@media screen and (min-width: 820px) {
+  .accordeon__item:hover .accordeon__image {
+    max-height: 100vh;
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+
+  .accordeon__item:hover .accordeon__icon {
+    transform: rotate(135deg);
+  }
+}
