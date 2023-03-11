@@ -17,11 +17,15 @@ ul {
   max-width: 1920px;
   margin: 0 auto;
   padding: 1rem;
+  font: bold 1em 'Arial', sans-serif;
+}
+
+.header {
+  margin: 0 auto;
 }
 
 .container {
   margin: 0 auto;
-  font: bold 1em 'Arial', sans-serif;
   color: rgb(19, 169, 255);
 }
 
@@ -54,6 +58,7 @@ input:checked ~ .accordeon__label .accordeon__icon {
   border-radius: 1rem;
   overflow: hidden;
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
 .accordeon__item:has(input:checked) {
@@ -70,6 +75,10 @@ input:checked ~ .accordeon__label .accordeon__icon {
 
 .accordeon__item:active .accordeon__icon {
   filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%) !important;
+}
+
+.accordeon__label {
+  cursor: pointer;
 }
 
 .label__header  {
@@ -113,16 +122,19 @@ input:checked ~ .accordeon__label .accordeon__icon {
   transform: rotate(135deg);
 }
 
-@media screen and (min-width: 820px) {
-  .container {
+@media screen and (min-width: 320px) {
+  .wrapper {
     font-size: 1.2em;
   }
 }
 
 @media screen and (min-width: 820px) {
-  .container {
-    width: 80%;
+  .wrapper {
     font-size: 1.4em;
+  }
+
+  .container, .header {
+    width: 80%;
   }
 
   .accordeon__item:hover .accordeon__image {
