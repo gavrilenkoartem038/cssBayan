@@ -72,7 +72,7 @@ input:checked ~ .accordeon__label .accordeon__icon {
   filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%) !important;
 }
 
-.accordeon__label  {
+.label__header  {
   display: flex;
   justify-content: space-between;
   padding: 1rem;
@@ -103,11 +103,10 @@ input:checked + .accordeon__label {
   height: auto;
 }
 
-input:checked ~ .accordeon__image {
+input:checked ~ .accordeon__label .accordeon__image {
   max-height: 100vh;
   padding: 1rem 0;
   transition: all 0.3s ease;
-  box-sizing: border-box;
 }
 
 input:checked ~ .accordeon__label .accordeon__icon {
@@ -130,7 +129,6 @@ input:checked ~ .accordeon__label .accordeon__icon {
     max-height: 100vh;
     padding: 1rem 0;
     transition: all 0.3s ease;
-    box-sizing: border-box;
   }
 
   .accordeon__item:hover .accordeon__icon {
