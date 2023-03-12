@@ -18,6 +18,7 @@ ul {
   margin: 0 auto;
   padding: 1rem;
   font: bold 1em 'Arial', sans-serif;
+  background-color: rgba(49, 197, 255, 0.1);
 }
 
 .header {
@@ -34,9 +35,13 @@ ul {
   transition: all 0.5s;
 }
 
-.container:hover .accordeon__icon,
 input:checked ~ .accordeon__label .accordeon__icon {
   filter: none;
+}
+
+.container:hover .accordeon__icon {
+  filter: none;
+  opacity: 1;
 }
 
 .container:hover {
@@ -65,16 +70,16 @@ input:checked ~ .accordeon__label .accordeon__icon {
   background-color: rgba(162, 162, 162, 0.3);
 }
 
-.accordeon__item:active {
-  background-color: white !important;
-}
-
 .accordeon__item:active .accordeon__label {
   color: rgb(19, 169, 255);
 }
 
 .accordeon__item:active .accordeon__icon {
   filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%) !important;
+}
+
+.accordeon__item:active .accordeon__image img{
+  opacity: 0.8;
 }
 
 .accordeon__label {
@@ -98,6 +103,7 @@ input:checked + .accordeon__label {
   background-size: contain;
   width: 1em;
   height: 1em;
+  opacity: 0;
 }
 
 .accordeon__image {
@@ -110,6 +116,7 @@ input:checked + .accordeon__label {
 .accordeon__image img {
   max-width: 90%;
   height: auto;
+  transition: all 0.3s ease;
 }
 
 input:checked ~ .accordeon__label .accordeon__image {
