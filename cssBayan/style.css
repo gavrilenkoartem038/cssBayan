@@ -5,6 +5,7 @@
 body {
   box-sizing: border-box;
   margin: 0;
+  background-color: rgba(49, 197, 255, 0.1);
 }
 
 ul {
@@ -18,7 +19,6 @@ ul {
   margin: 0 auto;
   padding: 1rem;
   font: bold 1em 'Arial', sans-serif;
-  background-color: rgba(49, 197, 255, 0.1);
 }
 
 .header {
@@ -33,19 +33,6 @@ ul {
 .accordeon__icon {
   filter: invert(51%) sepia(28%) saturate(2646%) hue-rotate(176deg) brightness(100%) contrast(107%);
   transition: all 0.5s;
-}
-
-input:checked ~ .accordeon__label .accordeon__icon {
-  filter: none;
-}
-
-.container:hover .accordeon__icon {
-  filter: none;
-  opacity: 1;
-}
-
-.container:hover {
-  color: inherit;
 }
 
 .accordeon {
@@ -103,7 +90,7 @@ input:checked + .accordeon__label {
   background-size: contain;
   width: 1em;
   height: 1em;
-  opacity: 0;
+  opacity: 1;
 }
 
 .accordeon__image {
@@ -126,6 +113,7 @@ input:checked ~ .accordeon__label .accordeon__image {
 }
 
 input:checked ~ .accordeon__label .accordeon__icon {
+  filter: none;
   transform: rotate(135deg);
 }
 
@@ -143,7 +131,13 @@ input:checked ~ .accordeon__label .accordeon__icon {
   .container, .header {
     width: 80%;
   }
+}
 
+@media screen and (hover: hover) {
+  .container:hover {
+    color: inherit;
+  }
+  
   .accordeon__item:hover .accordeon__image {
     max-height: 100vh;
     padding: 1rem 0;
@@ -152,5 +146,18 @@ input:checked ~ .accordeon__label .accordeon__icon {
 
   .accordeon__item:hover .accordeon__icon {
     transform: rotate(135deg);
+  }
+
+  .accordeon__icon {
+    opacity: 0;
+  }
+
+  .container:hover .accordeon__icon {
+    filter: none;
+    opacity: 1;
+  }
+  
+  .container:hover {
+    color: inherit;
   }
 }
