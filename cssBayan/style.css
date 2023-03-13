@@ -14,7 +14,7 @@ ul {
 }
 
 .wrapper {
-  max-width: 1920px;
+  max-width: 120rem;
   margin: 0 auto;
   padding: 1rem;
   font: bold 1em 'Arial', sans-serif;
@@ -59,7 +59,7 @@ input:checked ~ .accordeon__label .accordeon__icon {
 }
 
 .accordeon__item {
-  border: 3px solid rgba(162, 162, 162, 0.3);
+  border: 0.2rem solid rgba(162, 162, 162, 0.3);
   border-radius: 1rem;
   overflow: hidden;
   transition: background-color 0.3s;
